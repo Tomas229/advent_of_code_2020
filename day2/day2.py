@@ -34,31 +34,17 @@ def pass_word_2(l):
         aux = i.split()
         letter = aux[1][0]  # str
 
-        low_num = int(aux[0].split("-")[0])
-        high_num = int(aux[0].split("-")[1])
+        low_num = int(aux[0].split("-")[0]) - 1
+        high_num = int(aux[0].split("-")[1]) - 1
 
-        if(low_num < len(aux[2])):
-            pos1 = aux[2][low_num-1]
-            a = pos1 == letter
-
-            if(high_num < len(aux[2])):
-                pos2 = aux[2][high_num-1]
-                b = pos2 == letter
-                if (a ^ b):
-                    max_count += 1
-            else:
-                if a:
-                    max_count += 1
-
-        else:
-            continue
-
+        if ((aux[2][low_num] == letter) ^ (aux[2][high_num] == letter)):
+            max_count += 1
     return max_count
 
 
-with open("passwords.txt") as file:
+with open("password.txt") as file:
     pass_file = file.readlines()
-    for i in range(len(pass_file)):
+    for i in range(len(pass_file)-1):
         pass_file[i] = pass_file[i][0:-1]
 
     print(pass_word_2(pass_file))

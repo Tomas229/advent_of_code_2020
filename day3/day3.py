@@ -15,7 +15,7 @@ def slope(puzzle, right, down):
 
 with open("puzzle.txt") as file:
     pass_file = file.readlines()
-    for i in range(len(pass_file)):
+    for i in range(len(pass_file)-1):
         pass_file[i] = pass_file[i][0:-1]
 
     print(slope(pass_file, 3, 1))

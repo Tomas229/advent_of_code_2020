@@ -70,10 +70,10 @@ def three_sum_new(lista, num):
 
 
 with open("input.txt") as file:
-    pass_file = file.readlines()
-    for i in range(len(pass_file)):
-        pass_file[i] = pass_file[i][0:-1]
-        pass_file[i] = int(pass_file[i])
+    input_file = file.readlines()
+    for i in range(len(input_file)):
+        input_file[i] = input_file[i][0:-1]
+        input_file[i] = int(input_file[i])
 
-    print(two_sum_new(pass_file, 2020))
-    print(three_sum_new(pass_file, 2020))
+    print(two_sum_new(input_file, 2020))
+    print(three_sum_new(input_file, 2020))
